@@ -3,19 +3,24 @@ import { ThemeContext } from '../contexts/ThemeContext'
 
 export default function Navbar() {
 
-  const { isLightTheme, light, dark } = useContext(ThemeContext);
-  const theme = isLightTheme ? light : dark;
-  console.log(theme);
-
   return (
+    <ThemeContext.Consumer>
+      {context => {
+        console.log(context);
+        const { isLightTheme, light, dark } = context;
+        const theme = isLightTheme ? light : dark;
 
-    <nav style={{ background: theme.ui, color: theme.syntax }}>
-      <h1>Context App</h1>
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
-      </ul>
-    </nav>
+        return (
+          <nav style={{ background: theme.ui, color: theme.syntax }}>
+            <h1>Context App</h1>
+            <ul>
+              <li>Home</li>
+              <li>About</li>
+              <li>Contact</li>
+            </ul>
+          </nav>
+        );
+      }}
+    </ThemeContext.Consumer>
   )
 }
