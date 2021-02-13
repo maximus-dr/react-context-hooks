@@ -9,13 +9,14 @@ export default function SongList() {
     { title: 'almost home', id: 1 },
     { title: ' memory gospel', id: 2 },
     { title: ' this wild darkness', id: 3 }
-  ])
+  ]);
 
   const addSong = (title) => {
     setSongs([
       ...songs, { title, id: uuidv1()}
     ])
   }
+  
 
   return (
     <div className="song-list">

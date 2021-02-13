@@ -1,5 +1,6 @@
 import React from 'react'
 import AuthContextProvider from '../../contexts/AuthContext'
+import BooksContextProvider from '../../contexts/BooksContext'
 import ThemeContextProvider from '../../contexts/ThemeContext'
 import BookList from './BookList'
 import Navbar from './Navbar'
@@ -10,7 +11,9 @@ export default function ContextApp() {
     <AuthContextProvider>
       <ThemeContextProvider>
         <Navbar />
-        <BookList />
+        <BooksContextProvider>
+          <BookList />
+        </BooksContextProvider>
         <ThemeToggle />
       </ThemeContextProvider>
     </AuthContextProvider>
