@@ -1,10 +1,10 @@
-import ContextApp from "./components/contextapp/ContextApp";
+import HooksApp from "./components/hooksapp/HooksApp";
 
 
 function App() {
   return (
     <div className="App">
-      <ContextApp />
+      <HooksApp />
     </div>
   );
 }
