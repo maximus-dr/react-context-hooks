@@ -1,4 +1,5 @@
 import ThemeToggle from "./components/ThemeToggle";
+import AuthContextProvider from "./contexts/AuthContext";
 import ThemeContextProvider from "./contexts/ThemeContext";
 
 const { default: BookList } = require("./components/BookList");
@@ -8,9 +9,11 @@ function App() {
   return (
     <div className="App">
       <ThemeContextProvider>
-        <Navbar />
-        <BookList />
-        <ThemeToggle />
+        <AuthContextProvider>
+          <Navbar />
+          <BookList />
+          <ThemeToggle />
+        </AuthContextProvider>
       </ThemeContextProvider>
     </div>
   );
